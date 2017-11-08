@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Daily Relection</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./style.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+</head>
+
+<body>
+  <script>
+    function statusChangeCallback(response) {
+      console.log('statusChangeCallback');
+      console.log(response);
+    }
+
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '431681420562979',
+        cookie: true,
+        xfbml: true,
+        version: 'v2.8'
+      });
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    };
+    (function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = '//connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'facebook-jssdk');
+
+    function testAPI() {
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function(response) {});
+    }
+  </script>
+  <section class="hero is-fullheight is-default is-bold">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+
+            <!-- <img class="logo" src="logos.png" alt="Logo"> -->
+
+            <span class="navbar-burger burger" data-target="navbarMenu">
+                <span></span>
+            <span></span>
+            <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <a href="index.html" class="navbar-item is-active has-text-white">
+                  Home
+                </a>
+              <a href="about.html" class="navbar-item has-text-white">
+              About
+            </a>
+              <div id="fbookButton" class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState"></div>
+
+              <div id="status">
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <figure class="image is-1by1">
+              <img src="this-mirror.png" alt="mirror vector">
+            </figure>
+          </div>
+          <div class="column is-6 is-offset-1">
+            <img class="logo" src="the-one.png" alt="Logo">
+            <h2 class="front-copy subtitle is-5 has-text-white has-text-centered">
+            The Daily Reflection is Raspberry Pi powered mirror that can
+            display the news, weather, time, and your daily reminders set
+            from a convenient web application and updated in real time.            </h2>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

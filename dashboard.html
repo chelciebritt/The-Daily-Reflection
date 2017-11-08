@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="./css/dashstyles.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+
+<body>
+
+  <script>
+  function statusChangeCallback(response) {
+console.log('statusChangeCallback');
+console.log(response);
+
+
+}
+
+function checkLoginState() {
+FB.getLoginStatus(function(response) {
+  statusChangeCallback(response);
+});
+}
+
+window.fbAsyncInit = function() {
+FB.init({
+  appId: '431681420562979',
+  cookie: true,
+  xfbml: true,
+  version: 'v2.8'
+});
+
+FB.getLoginStatus(function(response) {
+  statusChangeCallback(response);
+});
+};
+
+(function(d, s, id) {
+var js,
+  fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s);
+js.id = id;
+js.src = '//connect.facebook.net/en_US/sdk.js';
+fjs.parentNode.insertBefore(js, fjs);
+})(document, 'script', 'facebook-jssdk');
+
+function testAPI() {
+console.log('Welcome!  Fetching your information.... ');
+FB.api('/me', function(response) {
+});
+}
+</script>
+  <section class="hero is-fullheight is-default is-bold">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+
+          <!-- <img class="logo" src="logos.png" alt="Logo"> -->
+
+            <span class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <a href="index.html" class="navs navbar-item is-active has-text-white">
+                Home
+              </a>
+              <a href="dashboard.html" class=" navs navbar-item has-text-white">
+            Dashboard
+          </a>
+              <a href="about.html" class="navs navbar-item has-text-white">
+            About
+          </a>
+              <div id="fbookButton" class="fb-login-button"
+              data-max-rows="1" data-size="medium"
+              data-button-type="login_with" data-show-faces="false"
+              data-auto-logout-link="true" data-use-continue-as="false"
+              scope="public_profile,email" onlogin="checkLoginState"></div>
+
+              <div id="status">
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+<div class="hero-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-2">
+      </div>
+      <div class="column is-9">
+        <section class="hero is-info welcome is-small">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title is-size-1">
+                Good Morning, Hot Mess Express.
+              </h1>
+              <h2 class="subtitle">
+                I hope you are having a great day!
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="info-tiles">
+          <div class="tile is-ancestor has-text-centered">
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <p class="title date"></p>
+                <p class="subtitle">Today's Date</p>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <p id="current-time" class="title"></p>
+                <p class="subtitle">Current Time</p>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <p id="current-weather" class="title current-weather"></p>
+                <p class="subtitle">Current Weather</p>
+              </article>
+            </div>
+          </div>
+        </section>
+        <div class="columns is-centered">
+          <div class="column is-centered">
+            <div class="card events-card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  To-do list:
+                </p>
+                <a href="#" class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </header>
+              <div class="card-table">
+                <div class="content">
+                  <table id="full-to-do-list" class="table is-fullwidth is-striped">
+                    <tbody>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input id="add-field" class="input clearafter" type="text" placeholder="Add To-do Item" value="">
+              </div>
+              <br>
+              <a id="add-item" class="button is-small is-primary is-outlined is-pulled-right" href="#">Add</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+  <script type="text/javascript" src="./app.js">
+  </script>
+
+  <script id="to-do-list-item" type="text/x-handlebars-template">
+    {{#each data}}
+    <tr id="{{id}}">
+      <td width="5%"><i class="fa fa-circle-thin" aria-hidden="true"></i></td>
+      <td id="item3">{{text}}</td>
+      <td><a id="delete-item" data-id="{{id}}" class="button is-small is-primary is-outlined is-pulled-right">Delete</a></td>
+    </tr>
+    {{/each}}
+  </script>
+</section>
+</body>
+
+</html>

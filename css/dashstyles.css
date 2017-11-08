@@ -1,0 +1,76 @@
+html, body {
+font-family: 'Lato', sans-serif;  font-size: 16px;
+background: linear-gradient(315deg, rgba(0, 0, 0, 0.51) 0%, rgba(12, 167, 173, 0.96) 45%, rgb(12, 167, 173) 50%, rgba(12, 167, 173, 0.96) 53%, rgba(0, 0, 0, 0.51) 100%);
+background-repeat: no-repeat;
+background-size: auto;
+}
+.navbar-item.brand-text {
+  font-weight: 300;
+}
+.navbar-item, .navbar-link {
+  font-size: 14px;
+  font-weight: 700;
+}
+.columns {
+  width: 100%;
+
+}
+.menu-label {
+  color: #8F99A3;
+  letter-spacing: 1.3;
+  font-weight: 700;
+}
+.menu-list a {
+  color: #0F1D38;
+  font-size: 14px;
+  font-weight: 700;
+}
+.card {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  margin-bottom: 2rem;
+}
+.card-header-title {
+  color: #0b8793;
+  font-weight: 400;
+}
+.info-tiles {
+  margin: 1rem 0;
+}
+.info-tiles .subtitle {
+  font-weight: 300;
+  color: #0b8793;
+}
+.hero.welcome.is-info {
+  background: inherit;
+  margin-top: 1em;
+}
+.hero.welcome .title, .hero.welcome .subtitle {
+  color: hsl(192, 17%, 99%);
+}
+.card .content {
+  font-size: 14px;
+}
+.card-footer-item {
+  font-size: 14px;
+  font-weight: 700;
+  color: #8F99A3;
+}
+
+.card-table .table {
+  margin-bottom: 0;
+}
+.events-card .card-table {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.navs:hover {
+  background-color: rgb(78, 87, 116) !important;
+}
+
+.front-copy {
+  line-height: 35px !important;
+}
+.about-copy {
+  padding-top: 40px !important;
+}
