@@ -13,6 +13,20 @@ The two way mirror was the most essential part of the build. To create this comp
 * [DynamoDB](https://aws.amazon.com/dynamodb/)
 * [Bulma](https://bulma.io/)
 
+## Links
+
+* [Web App](https://thedailyreflection.me/)
+<!-- * [Back End](https://github.com/chelciebritt/Kuva-Server)
+* [Live Demo](https://www.youtube.com/watch?v=9JQWpUZqYtA) -->
+
+## Images
+
+![Screenshot1](images/screenshot1.png "screenshots of app")
+![Screenshot2](images/screenshot2.png "screenshots of app")
+![Screenshot3](images/screenshot3.png "screenshots of app")
+![Screenshot4](images/mirror-image.png "screenshots of app")
+
+
 ## Built By
 
 * **Chelcie Britt** - (https://github.com/chelciebritt)
